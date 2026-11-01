@@ -1,10 +1,12 @@
 {
   "name": "chat-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST + Socket.IO backend for ChatApp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning index.js",
+    "dev": "node --watch --env-file-if-exists=.env --disable-warning=ExperimentalWarning index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.js\""
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,14 @@
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3"
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.5.0",
+    "socket.io": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.4"
   }
 }
